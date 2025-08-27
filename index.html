@@ -1,0 +1,530 @@
+<html lang="zh-CN"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日照市地标产品数字云仓 - 商品信息查询</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E88E5',
+                        secondary: '#4CAF50',
+                        accent: '#FF9800',
+                        neutral: '#F5F7FA',
+                        'neutral-dark': '#E4E7ED'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'card': '0 4px 12px rgba(0, 0, 0, 0.05)',
+                        'card-hover': '0 6px 16px rgba(0, 0, 0, 0.08)',
+                    }
+                },
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            }
+            .transition-custom {
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+    <!-- 顶部导航栏 -->
+    <header class="bg-primary text-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 md:py-4 flex flex-col md:flex-row items-center justify-between">
+            <div class="flex items-center mb-3 md:mb-0">
+                <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center mr-3">
+                    <span class="text-primary font-bold text-xl">RZ</span>
+                </div>
+                <div>
+                    <h1 class="text-lg md:text-xl font-bold">日照市地标产品数字云仓</h1>
+                    <p class="text-sm text-blue-100">日照特色产品官方认证平台</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button class="bg-white/10 hover:bg-white/20 transition-custom px-4 py-2 rounded-md text-sm flex items-center">
+                    <i class="fa fa-search mr-2"></i> 扫码查询
+                </button>
+                <button class="bg-white text-primary hover:bg-blue-50 transition-custom px-4 py-2 rounded-md text-sm font-medium">
+                    商家入驻
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-6 md:py-8">
+        <!-- 商品标题和图片区域 -->
+        <section class="bg-white rounded-xl shadow-card p-5 md:p-6 mb-6 transition-custom hover:shadow-card-hover">
+            <div class="flex flex-col md:flex-row">
+                <div class="w-full md:w-1/3 mb-5 md:mb-0 md:pr-6">
+                    <div class="bg-neutral rounded-lg overflow-hidden border border-neutral-dark h-[240px] flex items-center justify-center">
+                        <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/a7e86f25329f49deb0f1708387c78d81~tplv-a9rns2rl98-image.image?rcl=20250827170634B77001EBDCBDB7A270F2&amp;rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1756890395&amp;x-signature=LiZTlPL%2BbTvA10VyUW9KZf1JqMk%3D" alt="烤制花生果（老冰棍味花生）" class="w-full h-full object-cover">
+                    </div>
+                    <div class="mt-4 flex items-center">
+                        <div class="bg-secondary text-white text-sm px-3 py-1 rounded-full flex items-center mr-3">
+                            <i class="fa fa-certificate mr-1.5"></i>
+                            特色产品
+                        </div>
+                        <div class="bg-green-100 text-success text-sm px-3 py-1 rounded-full flex items-center">
+                            <i class="fa fa-check-circle mr-1.5"></i>
+                            官方认证
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-2/3">
+                    <h2 class="text-xl md:text-2xl font-bold mb-2 text-gray-800">烤制花生果（老冰棍味花生）</h2>
+                    <div class="flex flex-wrap gap-y-3 gap-x-6 text-sm mb-4">
+                        <div class="flex items-center">
+                            <span class="text-gray-500 mr-2">生产企业:</span>
+                            <span class="font-medium">山东超迈食品有限公司</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-gray-500 mr-2">产地:</span>
+                            <span class="font-medium">山东·潍坊</span>
+                        </div>
+                    </div>
+                    <div class="bg-accent rounded-lg p-4 border border-blue-100">
+                        <div class="flex items-start">
+                            <i class="fa fa-info-circle text-primary mt-0.5 mr-3 text-lg"></i>
+                            <p class="text-sm text-gray-700">
+                                本页面展示的商品信息由企业申报并经审核，如发现信息有误，请联系我们。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 标签导航 -->
+        <div class="border-b border-gray-200 mb-6">
+            <div class="flex overflow-x-auto scrollbar-hide">
+                <button class="nav-tab active px-5 py-3 text-primary border-b-2 border-primary font-medium text-sm whitespace-nowrap">
+                    产品信息
+                </button>
+                <button class="nav-tab px-5 py-3 text-gray-500 hover:text-gray-700 font-medium text-sm whitespace-nowrap">
+                    企业信息
+                </button>
+                <button class="nav-tab px-5 py-3 text-gray-500 hover:text-gray-700 font-medium text-sm whitespace-nowrap">
+                    认证信息
+                </button>
+                <button class="nav-tab px-5 py-3 text-gray-500 hover:text-gray-700 font-medium text-sm whitespace-nowrap">
+                    溯源记录
+                </button>
+                <button class="nav-tab px-5 py-3 text-gray-500 hover:text-gray-700 font-medium text-sm whitespace-nowrap">
+                    相关产品
+                </button>
+            </div>
+        </div>
+
+        <!-- 产品信息内容 -->
+        <section class="tab-content active bg-white rounded-xl shadow-card p-5 md:p-6 mb-6 transition-custom hover:shadow-card-hover">
+            <h3 class="text-lg font-bold mb-5 pb-2 border-b border-gray-100">产品详细信息</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="flex py-3 border-b border-gray-50">
+                    <div class="w-1/3 text-gray-500">产品名称:</div>
+                    <div class="w-2/3 font-medium">烤制花生果（老冰棍味花生）</div>
+                </div>
+                <div class="flex py-3 border-b border-gray-50">
+                    <div class="w-1/3 text-gray-500">产品类型:</div>
+                    <div class="w-2/3 font-medium">烘炒类</div>
+                </div>
+                <div class="flex py-3 border-b border-gray-50">
+                    <div class="w-1/3 text-gray-500">规格:</div>
+                    <div class="w-2/3 font-medium">5kg袋</div>
+                </div>
+                <div class="flex py-3 border-b border-gray-50">
+                    <div class="w-1/3 text-gray-500">生产日期:</div>
+                    <div class="w-2/3 font-medium">见袋体打码处或袋内合格证</div>
+                </div>
+                <div class="flex py-3 border-b border-gray-50">
+                    <div class="w-1/3 text-gray-500">保质期:</div>
+                    <div class="w-2/3 font-medium">在常温下密封8个月</div>
+                </div>
+                <div class="flex py-3 border-b border-gray-50">
+                    <div class="w-1/3 text-gray-500">执行标准:</div>
+                    <div class="w-2/3 font-medium">GB/T22165</div>
+                </div>
+                <div class="flex py-3 border-b border-gray-50">
+                    <div class="w-1/3 text-gray-500">食品生产许可证编号:</div>
+                    <div class="w-2/3 font-medium">SC11237078209375</div>
+                </div>
+                <div class="flex py-3 border-b border-gray-50">
+                    <div class="w-1/3 text-gray-500">食用方法:</div>
+                    <div class="w-2/3 font-medium">开袋去壳后食用</div>
+                </div>
+                <div class="flex py-3 border-b border-gray-50">
+                    <div class="w-1/3 text-gray-500">生产商:</div>
+                    <div class="w-2/3 font-medium">山东超迈食品有限公司</div>
+                </div>
+                <div class="flex py-3 border-b border-gray-50">
+                    <div class="w-1/3 text-gray-500">产地:</div>
+                    <div class="w-2/3 font-medium">山东·潍坊</div>
+                </div>
+                <div class="flex py-3 border-b border-gray-50">
+                    <div class="w-1/3 text-gray-500">地址:</div>
+                    <div class="w-2/3 font-medium">山东省潍坊市诸城市桃林镇井上村</div>
+                </div>
+            </div>
+            
+            <div class="mt-6">
+                <h4 class="font-bold mb-3">配料表</h4>
+                <div class="bg-neutral p-4 rounded-lg">
+                    <p class="text-gray-700">花生果、食用盐、味精、食品添加剂（甜蜜素、糖精钠、三氯蔗糖、食用香精、特丁基对苯二酚）</p>
+                </div>
+            </div>
+            
+            <div class="mt-6">
+                <h4 class="font-bold mb-3">营养成分表</h4>
+                <div class="bg-neutral rounded-lg overflow-hidden">
+                    <table class="w-full text-sm">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="px-4 py-3 text-left font-medium text-gray-700">项目</th>
+                                <th class="px-4 py-3 text-center font-medium text-gray-700">每100克（g）</th>
+                                <th class="px-4 py-3 text-center font-medium text-gray-700">NRV%</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-4 py-3 text-gray-700">能量</td>
+                                <td class="px-4 py-3 text-center text-gray-700">2711千焦（kJ）</td>
+                                <td class="px-4 py-3 text-center text-gray-700">32%</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 text-gray-700">蛋白质</td>
+                                <td class="px-4 py-3 text-center text-gray-700">25.7克（g）</td>
+                                <td class="px-4 py-3 text-center text-gray-700">43%</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 text-gray-700">脂肪</td>
+                                <td class="px-4 py-3 text-center text-gray-700">54.4克（g）</td>
+                                <td class="px-4 py-3 text-center text-gray-700">91%</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 text-gray-700">碳水化合物</td>
+                                <td class="px-4 py-3 text-center text-gray-700">15.6克（g）</td>
+                                <td class="px-4 py-3 text-center text-gray-700">5%</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 text-gray-700">钠</td>
+                                <td class="px-4 py-3 text-center text-gray-700">536毫克（mg）</td>
+                                <td class="px-4 py-3 text-center text-gray-700">27%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="mt-6">
+                <h4 class="font-bold mb-3">储存方法</h4>
+                <div class="bg-neutral p-4 rounded-lg">
+                    <p class="text-gray-700">密封、干燥、通风、避光、开袋后请尽快食用，以免受潮。</p>
+                </div>
+            </div>
+            
+            <div class="mt-6">
+                <h4 class="font-bold mb-3">联系方式</h4>
+                <div class="bg-neutral p-4 rounded-lg">
+                    <p class="text-gray-700 mb-2">电话：0536-6509688  13964647821</p>
+                    <p class="text-gray-700 mb-2">电话：0536-6508086  15095162878</p>
+                    <p class="text-gray-700">邮箱：tllsy@163.com</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 企业信息内容 -->
+        <section class="tab-content hidden bg-white rounded-xl shadow-card p-5 md:p-6 mb-6 transition-custom hover:shadow-card-hover">
+            <h3 class="text-lg font-bold mb-5 pb-2 border-b border-gray-100">企业信息</h3>
+            <div class="space-y-4">
+                <div class="flex py-3 border-b border-gray-50">
+                    <div class="w-1/4 text-gray-500">企业名称:</div>
+                    <div class="w-3/4 font-medium">山东超迈食品有限公司</div>
+                </div>
+                <div class="flex py-3 border-b border-gray-50">
+                    <div class="w-1/4 text-gray-500">注册地址:</div>
+                    <div class="w-3/4 font-medium">山东省潍坊市诸城市桃林镇井上村</div>
+                </div>
+                <div class="flex py-3 border-b border-gray-50">
+                    <div class="w-1/4 text-gray-500">联系方式:</div>
+                    <div class="w-3/4 font-medium">
+                        0536-6509688、13964647821<br>
+                        0536-6508086、15095162878
+                    </div>
+                </div>
+                <div class="flex py-3 border-b border-gray-50">
+                    <div class="w-1/4 text-gray-500">电子邮箱:</div>
+                    <div class="w-3/4 font-medium">tllsy@163.com</div>
+                </div>
+                <div class="flex py-3 border-b border-gray-50">
+                    <div class="w-1/4 text-gray-500">食品生产许可证:</div>
+                    <div class="w-3/4 font-medium">SC11237078209375</div>
+                </div>
+                <div class="flex py-3 border-b border-gray-50">
+                    <div class="w-1/4 text-gray-500">企业简介:</div>
+                    <div class="w-3/4 text-gray-700">
+                        山东超迈食品有限公司专业从事花生等坚果类产品的加工与销售，拥有先进的生产设备和标准化生产线，
+                        严格遵循食品安全生产规范，产品质量可靠，深受消费者喜爱。公司主要产品包括各类风味花生、坚果炒货等。
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 认证信息内容 -->
+        <section class="tab-content hidden bg-white rounded-xl shadow-card p-5 md:p-6 mb-6 transition-custom hover:shadow-card-hover">
+            <h3 class="text-lg font-bold mb-5 pb-2 border-b border-gray-100">认证信息</h3>
+            <div class="space-y-6">
+                <div class="border border-gray-100 rounded-lg p-4">
+                    <h4 class="font-medium flex items-center text-secondary mb-3">
+                        <i class="fa fa-certificate mr-2"></i> 食品生产许可认证
+                    </h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                        <div class="flex">
+                            <span class="text-gray-500 w-24">许可证编号:</span>
+                            <span class="font-medium">SC11237078209375</span>
+                        </div>
+                        <div class="flex">
+                            <span class="text-gray-500 w-24">发证日期:</span>
+                            <span class="font-medium">2023-05-16</span>
+                        </div>
+                        <div class="flex">
+                            <span class="text-gray-500 w-24">发证机构:</span>
+                            <span class="font-medium">潍坊市市场监督管理局</span>
+                        </div>
+                        <div class="flex">
+                            <span class="text-gray-500 w-24">有效期至:</span>
+                            <span class="font-medium">2028-05-15</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-100 rounded-lg p-4">
+                    <h4 class="font-medium flex items-center text-secondary mb-3">
+                        <i class="fa fa-check-square-o mr-2"></i> 产品质量检测报告
+                    </h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                        <div class="flex">
+                            <span class="text-gray-500 w-24">报告编号:</span>
+                            <span class="font-medium">WFJC20240612003</span>
+                        </div>
+                        <div class="flex">
+                            <span class="text-gray-500 w-24">检测日期:</span>
+                            <span class="font-medium">2024-06-12</span>
+                        </div>
+                        <div class="flex">
+                            <span class="text-gray-500 w-24">检测机构:</span>
+                            <span class="font-medium">潍坊市产品质量监督检验所</span>
+                        </div>
+                        <div class="flex">
+                            <span class="text-gray-500 w-24">检测结论:</span>
+                            <span class="font-medium text-success">合格</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-100 rounded-lg p-4">
+                    <h4 class="font-medium flex items-center text-secondary mb-3">
+                        <i class="fa fa-file-text-o mr-2"></i> 执行标准
+                    </h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                        <div class="flex">
+                            <span class="text-gray-500 w-24">标准编号:</span>
+                            <span class="font-medium">GB/T22165</span>
+                        </div>
+                        <div class="flex">
+                            <span class="text-gray-500 w-24">标准名称:</span>
+                            <span class="font-medium">坚果炒货食品通则</span>
+                        </div>
+                        <div class="flex">
+                            <span class="text-gray-500 w-24">发布日期:</span>
+                            <span class="font-medium">2008-06-25</span>
+                        </div>
+                        <div class="flex">
+                            <span class="text-gray-500 w-24">实施日期:</span>
+                            <span class="font-medium">2009-01-01</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 溯源记录内容 -->
+        <section class="tab-content hidden bg-white rounded-xl shadow-card p-5 md:p-6 mb-6 transition-custom hover:shadow-card-hover">
+            <h3 class="text-lg font-bold mb-5 pb-2 border-b border-gray-100">产品溯源记录</h3>
+            
+            <div class="relative">
+                <!-- 时间线 -->
+                <div class="absolute left-3 top-0 bottom-0 w-0.5 bg-gray-200"></div>
+                
+                <!-- 溯源节点1 -->
+                <div class="relative pl-10 pb-6">
+                    <div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-green-500 text-white flex items-center justify-center z-10">
+                        <i class="fa fa-seedling text-xs"></i>
+                    </div>
+                    <div class="font-medium">花生种植</div>
+                    <div class="text-sm text-gray-500 mt-1">2023年5月 - 2023年9月</div>
+                    <div class="mt-2 text-sm text-gray-700">
+                        种植基地：山东优质花生产区<br>
+                        种植方式：标准化种植，符合绿色食品标准
+                    </div>
+                </div>
+                
+                <!-- 溯源节点2 -->
+                <div class="relative pl-10 pb-6">
+                    <div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-green-500 text-white flex items-center justify-center z-10">
+                        <i class="fa fa-truck text-xs"></i>
+                    </div>
+                    <div class="font-medium">原料收购与检验</div>
+                    <div class="text-sm text-gray-500 mt-1">2023年9月26日-10月5日</div>
+                    <div class="mt-2 text-sm text-gray-700">
+                        收购标准：颗粒饱满，无霉变，无杂质<br>
+                        检验项目：水分、杂质、不完善粒等<br>
+                        质检员：李红梅
+                    </div>
+                </div>
+                
+                <!-- 溯源节点3 -->
+                <div class="relative pl-10 pb-6">
+                    <div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-green-500 text-white flex items-center justify-center z-10">
+                        <i class="fa fa-cog text-xs"></i>
+                    </div>
+                    <div class="font-medium">加工生产</div>
+                    <div class="text-sm text-gray-500 mt-1">2024年6月</div>
+                    <div class="mt-2 text-sm text-gray-700">
+                        加工工艺：筛选→清洗→入味→烘烤→冷却→包装<br>
+                        老冰棍口味配方研发：王磊<br>
+                        生产车间：山东超迈食品有限公司一号车间
+                    </div>
+                </div>
+                
+                <!-- 溯源节点4 -->
+                <div class="relative pl-10 pb-6">
+                    <div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-green-500 text-white flex items-center justify-center z-10">
+                        <i class="fa fa-balance-scale text-xs"></i>
+                    </div>
+                    <div class="font-medium">质量检测</div>
+                    <div class="text-sm text-gray-500 mt-1">2024年6月</div>
+                    <div class="mt-2 text-sm text-gray-700">
+                        检测项目：感官指标、水分、酸价、过氧化值、微生物等<br>
+                        检测结果：全部符合GB/T22165标准要求<br>
+                        检测员：张强
+                    </div>
+                </div>
+                
+                <!-- 溯源节点5 -->
+                <div class="relative pl-10">
+                    <div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-green-500 text-white flex items-center justify-center z-10">
+                        <i class="fa fa-warehouse text-xs"></i>
+                    </div>
+                    <div class="font-medium">包装入库</div>
+                    <div class="text-sm text-gray-500 mt-1">2024年6月</div>
+                    <div class="mt-2 text-sm text-gray-700">
+                        包装规格：5kg/袋<br>
+                        入库编号：CM202406008<br>
+                        仓库位置：山东超迈食品有限公司成品库A区3号货架
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 相关产品内容 -->
+        <section class="tab-content hidden bg-white rounded-xl shadow-card p-5 md:p-6 mb-6 transition-custom hover:shadow-card-hover">
+            <h3 class="text-lg font-bold mb-5 pb-2 border-b border-gray-100">相关产品</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <a href="#" class="group">
+                    <div class="bg-neutral rounded-lg overflow-hidden border border-neutral-dark h-36 flex items-center justify-center">
+                        <img src="https://picsum.photos/300/300?random=21" alt="奶油味烤花生" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <h4 class="text-sm font-medium mt-2 line-clamp-2 group-hover:text-primary transition-colors">奶油味烤花生 200g</h4>
+                    <div class="text-xs text-gray-500 mt-1">山东·潍坊</div>
+                </a>
+                
+                <a href="#" class="group">
+                    <div class="bg-neutral rounded-lg overflow-hidden border border-neutral-dark h-36 flex items-center justify-center">
+                        <img src="https://picsum.photos/300/300?random=22" alt="五香花生" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <h4 class="text-sm font-medium mt-2 line-clamp-2 group-hover:text-primary transition-colors">五香花生 300g</h4>
+                    <div class="text-xs text-gray-500 mt-1">山东·潍坊</div>
+                </a>
+                
+                <a href="#" class="group">
+                    <div class="bg-neutral rounded-lg overflow-hidden border border-neutral-dark h-36 flex items-center justify-center">
+                        <img src="https://picsum.photos/300/300?random=23" alt="咸干花生" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <h4 class="text-sm font-medium mt-2 line-clamp-2 group-hover:text-primary transition-colors">咸干花生 400g</h4>
+                    <div class="text-xs text-gray-500 mt-1">山东·潍坊</div>
+                </a>
+                
+                <a href="#" class="group">
+                    <div class="bg-neutral rounded-lg overflow-hidden border border-neutral-dark h-36 flex items-center justify-center">
+                        <img src="https://picsum.photos/300/300?random=24" alt="蒜香花生" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <h4 class="text-sm font-medium mt-2 line-clamp-2 group-hover:text-primary transition-colors">蒜香花生 250g</h4>
+                    <div class="text-xs text-gray-500 mt-1">山东·潍坊</div>
+                </a>
+            </div>
+        </section>
+
+        <!-- 底部信息 -->
+        <div class="bg-white rounded-xl shadow-card p-5 md:p-6 text-center text-sm text-gray-500">
+            <p>本信息由日照市地标产品数字云仓提供，未经授权不得转载</p>
+            <p class="mt-2">© 2024 日照市地标产品数字云仓 版权所有</p>
+        </div>
+    </main>
+
+    <script>
+        // 标签切换功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const navTabs = document.querySelectorAll('.nav-tab');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            navTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // 移除所有活动状态
+                    navTabs.forEach(t => {
+                        t.classList.remove('active', 'text-primary', 'border-primary', 'border-b-2');
+                        t.classList.add('text-gray-500');
+                    });
+                    
+                    tabContents.forEach(content => {
+                        content.classList.add('hidden');
+                        content.classList.remove('active');
+                    });
+                    
+                    // 设置当前活动状态
+                    this.classList.add('active', 'text-primary', 'border-primary', 'border-b-2');
+                    this.classList.remove('text-gray-500');
+                    
+                    // 显示对应的内容
+                    const index = Array.from(navTabs).indexOf(this);
+                    tabContents[index].classList.remove('hidden');
+                    tabContents[index].classList.add('active');
+                });
+            });
+
+            // 添加平滑滚动
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+
+
+
+    </body></html>
